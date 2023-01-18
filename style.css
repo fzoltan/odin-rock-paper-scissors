@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    flex-direction: column;
+}
+
+h1 {
+    margin: 20px 0 0 0;
+    font-size: 50px;
+}
+
+p {
+    margin-top: 0px;
+}
+
+.results-details {
+    font-size: 32px;
+}
+
+.choice-button {
+    font-size: 18px;
+}

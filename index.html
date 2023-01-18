@@ -1,72 +1,22 @@
-<script>
-    function getComputerChoice() {
-    let rand_num = Math.floor(Math.random()*3) + 1;
-    switch(rand_num){
-        case 1:
-                return "Rock";
-                break;
-        case 2:
-                return "Paper";
-                break;
-        case 3:
-                return "Scissors";
-                break;
-    }
-    }
-
-    function playRound(playerSelection, computerSelection) {
-        playerSelection = playerSelection.toLowerCase();
-        computerSelection = computerSelection.toLowerCase();
-
-        if (playerSelection === computerSelection)
-            return "Draw!";
-        if (playerSelection === "rock") {
-            if(computerSelection === "paper")
-            {
-                return false;
-            }
-            else if (computerSelection === "scissors")
-            {
-                return true;
-            }
-        }
-
-        if (playerSelection === "paper") {
-            if(computerSelection === "scissors")
-            {
-                return false;
-            }
-            else if (computerSelection === "rock")
-            {
-                return true;
-            }
-        }
-
-        if (playerSelection === "scissors") {
-            if(computerSelection === "rock")
-            {
-                return false;
-            }
-            else if (computerSelection === "paper")
-            {
-                return true;
-            }
-        }
-            
-    }
-
-
-    function game() {
-        let playerScore = 0;
-        let computerScore = 0;
-
-        for (let i = 0; i < 5; i++)
-        {
-            let result = playRound(prompt("Rock, Paper or Scissors?"), getComputerChoice());
-            (result === true) ? playerScore++ : computerScore++;
-            console.log(`Current Scores - Player: ${playerScore}, Computer: ${computerScore}`);
-        }
-        (playerScore > computerScore) ? console.log(`You Won! - Player: ${playerScore}, Computer: ${computerScore}`) : console.log(`You Lost! - Player: ${playerScore}, Computer: ${computerScore}`)
-    }
-
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <div class="buttons">
+        <button class="choice-button" id="rock">Rock</button>
+        <button class="choice-button" id="paper">Paper</button>
+        <button class="choice-button" id="scissors">Scissors</button>
+    </div>
+    <div class="results">
+        <h1>Results</h1>
+        <p class="results-details">Current Scores - Player: 0, Computer: 0</p>
+    </div>
+</body>
+</html>
